@@ -29,9 +29,12 @@ const slides = [
   let currentSlide = 0
 
   const previewEl = document.querySelector('.preview')
+  
   const prevEl = document.querySelector('.prev')
   const nextEl = document.querySelector('.next')
   const slideEl = previewEl.querySelector('.slide')
+  const sliderEl = document.getElementById('slider')
+  console.log(prevEl, previewEl,nextEl,slideEl);
   
   function printCurrentSlide(imageEl, titleEl, textEl, slide) {
     const { image, title, desc} = slide
@@ -77,10 +80,10 @@ const slides = [
 
   let clock = setInterval(next, 2000)
 
-  slideEl.addEventListener("mouseenter", function () {
+  sliderEl.addEventListener("mouseenter", function () {
     clearInterval(clock)
     
 })
-slideEl.addEventListener('mouseleave', function(){
+sliderEl.addEventListener('mouseleave', function(){
     clock = setInterval(next, 2000)
 })
